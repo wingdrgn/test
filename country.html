@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-select {
+            width: 95px;
+            height: 40px;
+            border-bottom: 1px solid #B6B6B6;
+            position: relative;
+        }
+
+        .selected {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .options {
+            display: none;
+            position: absolute;
+            background: white;
+            border: 1px solid #B6B6B6;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .options div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .options div:hover {
+            background: #f0f0f0;
+        }
+
+        .button {
+            background-color: #C2DFDD;
+        }
+
+        .button-active {
+            background-color: #009188;
+        }
+    </style>
+</head>
+
+<body style="width: 100%; height: 100%; padding: 0; margin: 0;">
+
+    <div id="api" data-name="SelfAsserted" role="main">
+        <div
+            style="height: 48px;  background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 16px 0 16px; box-shadow: 0px 4px 5px 0px #0000000D;">
+            <img src="./src/assets/images/header/lifeCircle.svg">
+            <div style="font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C;">登入/登記</div>
+        </div>
+
+        <div style="padding: 0 16px; display: flex; flex-direction: column; align-items: center;">
+            <div
+                style="margin-top: 48px; color: #1A1A1A; font-weight: 300; font-size: 18px; line-height: 25px; text-align: center; ">
+                <p>歡迎回來「周大福人壽 • 生活圈」！請以手機號碼登入</p>
+            </div>
+            <form id="attributeVerification">
+                <div id="attributeList" class="attr">
+                    <ul style="list-style-type: none; padding: 1px 0; display: flex; gap: 8px;">
+                        <li class="DropdownSingleSelect countryCode_li">
+                            <div class="attrEntry">
+                                <div class="error itemLevel" role="alert"></div>
+                                <div class="custom-select">
+                                    <select id="countryCode" style="display: none;">
+                                        <option value="HK" selected>+852</option>
+                                        <option value="MO">+853</option>
+                                        <option value="CN">+86</option>
+                                    </select>
+                                    <div class="selected">+852</div>
+                                    <div class="options">
+                                        <div data-value="HK">+852</div>
+                                        <div data-value="MO">+853</div>
+                                        <div data-value="CN">+86</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="TextBox nationalNumber_li">
+                            <div class="attrEntry">
+                                <input id="nationalNumber" maxlength="11"
+                                    style="width: 240px; height: 40px; padding: 0; border: none; border-bottom: 1px solid #B6B6B6; outline: none;"
+                                    type="text" placeholder="Phone Number" value="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="buttons">
+                    <button id="continue" type="submit" form="attributeVerification"
+                        style="font-weight: 500; font-size: 16px; line-height: 23px; color: white; width: 343px; height: 48px; border-radius: 4px 16px; border: none; margin-bottom: 144px;"
+                        class="button">獲取驗證碼</button>
+                </div>
+            </form>
+        </div>
+
+        <div
+            style="background-color: rgba(238, 238, 238, 0.4); height: 252px; box-sizing: border-box; border-radius: 80px 0 0 0; padding: 32px 32px 24px 48px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+                <img src="./src/assets/images/logo.svg" style="height: 40px;">
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="font-weight: 400; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">
+                        關注周大福人壽
+                    </div>
+                    <div style="width: 263px; display: flex; flex-direction: row; justify-content: space-between;">
+                        <img src="./src/assets/images/header/facebook.png" style="width: 24px;">
+                        <img src="./src/assets/images/header/wechat.png" style="width: 24px;">
+                        <img src="./src/assets/images/header/youtube.png" style="width: 24px;">
+                        <img src="./src/assets/images/header/ins.png" style="width: 24px;">
+                        <img src="./src/assets/images/header/linkedin.png" style="width: 24px;">
+                    </div>
+                </div>
+                <div>
+                    <span
+                        style="font-weight: 400; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">客戶服務熱線</span>
+                    <span
+                        style="font-weight: 400; font-size: 12px; line-height: 17px; color: rgba(109, 109, 109, 1);">(852)
+                        2866 8898</span>
+                </div>
+                <div style="font-weight: 400; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">© 2024
+                    周大福人壽保險有限公司（於百慕達登記成立之有限公司）。版權所有，不得轉載。</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        document.querySelector('.selected').addEventListener('click', function () {
+            const options = document.querySelector('.options');
+            options.style.display = options.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.querySelectorAll('.options div').forEach(option => {
+            option.addEventListener('click', function () {
+                // console.log(this, this.getAttribute('data-value'))
+                document.querySelector('.selected').textContent = this.textContent;
+                document.querySelector('.options').style.display = 'none';
+                const select = document.getElementById('countryCode');
+                select.value = this.getAttribute('data-value');
+                console.log(select.value)
+            });
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.custom-select')) {
+                document.querySelector('.options').style.display = 'none';
+            }
+        });
+        const continueButton = document.getElementById('continue')
+        const nationalNumber = document.getElementById('nationalNumber');
+        const select = document.getElementById('countryCode')
+        let nationalNumberValid = false
+        function updateButtonState() {
+            if (nationalNumberValid) {
+                continueButton.classList.add('button-active');
+                continueButton.disabled = false;
+            } else {
+                continueButton.classList.remove('button-active');
+                continueButton.disabled = true;
+            }
+        }
+        function validateInput() {
+            if (select.value === 'ZH' && nationalNumber.value.trim().length === 11 || select.value !== 'ZH' && nationalNumber.value.trim().length === 8) {
+                nationalNumberValid = true
+            } else {
+                nationalNumbereValid = false
+            }
+            updateButtonState()
+        }
+
+        nationalNumber.addEventListener('input', validateInput)
+        nationalNumber.addEventListener('focus', () => {
+            nationalNumber.placeholder = '';
+            validateInput()
+        });
+        nationalNumber.addEventListener('blur', () => {
+            nationalNumber.placeholder = 'Phone Number';
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
