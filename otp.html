@@ -5,7 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>otp</title>
+  <script src="https://fanciful-eclair-8d84f5.netlify.app/assets/otp.js" defer></script>
   <style>
+    @font-face {
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 300;
+      src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Light.otf') format('opentype');
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 400;
+      src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Regular.otf') format('opentype');
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 500;
+      src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Medium.otf') format('opentype');
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+      font-weight: 700;
+      src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Bold.otf') format('opentype');
+      font-display: fallback;
+    }
+
     .button {
       background-color: #C2DFDD;
     }
@@ -34,16 +67,17 @@
     <div
       style="height: 48px;  background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 16px 0 16px; box-shadow: 0px 4px 5px 0px #0000000D;">
       <img src="./src/assets/images/header/lifeCircle.svg">
-      <a style="font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C; text-decoration: none;"
+      <a style="font-size: 15px; font-weight: 700; font-family: 'Noto Sans TC'; line-height: 22px; color: #B78E6C; text-decoration: none;"
         href="https://circledev.uatctflife.com.hk/en/entry">登入/登記</a>
     </div>
     <div
-      style="text-align: center; font-size: 18px; font-weight: 300; line-height: 25px; padding: 40px 16px 80px 16px;">
-      <div id="resendMessage"
-        style="padding-top: 16px; font-size: 14px; font-weight: 400; line-height: 20px; color: #B78E6C; display: none;">
+      style="text-align: center; font-size: 18px; font-weight: 300; font-family: 'Noto Sans TC'; line-height: 25px; padding: 40px 16px 80px 16px;">
+      <!-- <div id="resendMessage"
+        style="padding-top: 16px; font-size: 14px; font-weight: 400; font-family: 'Noto Sans TC'; line-height: 20px; color: #B78E6C; display: none;">
         <div>已發送新的驗證碼</div>
-      </div>
-      <div style="padding-top: 16px; padding-bottom: 48px; font-size: 12px; font-weight: 400; line-height: 17px;">
+      </div> -->
+      <div
+        style="padding-top: 16px; padding-bottom: 48px; font-size: 12px; font-weight: 400; font-family: 'Noto Sans TC'; line-height: 17px;">
         <div>驗證碼有效期為10分鐘</div>
       </div>
       <form id="attributeVerification">
@@ -53,7 +87,9 @@
               style="border: none; width: 343px; height: 40px; text-align: center; border-bottom: 0.5px solid #B6B6B6;outline: none; padding: 0;">
             <div style="display: none;">
               <img src="./src/assets/images/wrongInput.svg">
-              <p style="font-weight: 400; font-size: 11px; line-height: 15px; color: #F55050;">驗證碼不正確，請檢查後再試或重新發送新的驗證碼
+              <p
+                style="font-weight: 400; font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: #F55050;">
+                驗證碼不正確，請檢查後再試或重新發送新的驗證碼
               </p>
             </div>
           </div>
@@ -65,8 +101,8 @@
         </div>
 
       </form>
-      <button id="resend"
-        style="width: 100%; height: 48px; border: none; background-color: white; color: #009188; margin-top: 16px;">重新發送</button>
+      <!-- <button id="resend"
+        style="width: 100%; height: 48px; border: none; background-color: white; color: #009188; margin-top: 16px;">重新發送</button> -->
 
     </div>
 
@@ -76,7 +112,9 @@
       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
         <img src="./src/assets/images/logo.svg" style="height: 40px;">
         <div style="display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-weight: 400; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">關注周大福人壽
+          <div
+            style="font-weight: 400; font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">
+            關注周大福人壽
           </div>
           <div style="width: 263px; display: flex; flex-direction: row; justify-content: space-between;">
             <img src="./src/assets/images/header/facebook.png" style="width: 24px;">
@@ -87,72 +125,20 @@
           </div>
         </div>
         <div>
-          <span style="font-weight: 400; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">客戶服務熱線</span>
-          <span style="font-weight: 400; font-size: 12px; line-height: 17px; color: rgba(109, 109, 109, 1);">(852)
+          <span
+            style="font-weight: 400; font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">客戶服務熱線</span>
+          <span
+            style="font-weight: 400; font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(109, 109, 109, 1);">(852)
             2866 8898</span>
         </div>
-        <div style="font-weight: 400; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">© 2024
+        <div
+          style="font-weight: 400; font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">
+          © 2024
           周大福人壽保險有限公司（於百慕達登記成立之有限公司）。版權所有，不得轉載。</div>
       </div>
     </div>
   </div>
 
-
-
-  <script>
-    const phoneVerificationCode = document.getElementById('phoneVerificationCode');
-    // const UsernameError = document.getElementById('UsernameError');
-    const continueButton = document.getElementById('continue')
-    const resendButton = document.getElementById('resend')
-    const resendMessage = document.getElementById('resendMessage')
-    let phoneVerificationCodeValid = false
-    let resend = false
-    function updateButtonState() {
-      if (phoneVerificationCodeValid) {
-        continueButton.classList.add('button-active');
-        continueButton.disabled = false;
-      } else {
-        continueButton.classList.remove('button-active');
-        continueButton.disabled = true;
-      }
-    }
-    function validateInput() {
-      if (phoneVerificationCode.value.trim().length === 6) {
-        phoneVerificationCodeValid = true
-      } else {
-        phoneVerificationCodeValid = false
-      }
-      updateButtonState()
-    }
-    function clickResend() {
-      resend = true
-      resendMessage.style.display = 'block'
-      resendButton.disabled = true
-      const endTime = Date.now() + 60 * 1000
-      const interval = setInterval(function () {
-        resendButton.classList.add('resend')
-        const now = Date.now()
-        const remain = endTime - now
-        resendButton.textContent = `重新發送 (${Math.ceil(remain / 1000)}秒)`;
-        if (remain < 0) {
-          resendButton.classList.remove('resend')
-          clearInterval(interval);
-          resendButton.disabled = false;
-          resendButton.textContent = '重新發送'
-        }
-      }, 1000);
-    }
-    phoneVerificationCode.addEventListener('input', validateInput)
-    phoneVerificationCode.addEventListener('focus', () => {
-      phoneVerificationCode.placeholder = '';
-      validateInput()
-    });
-    phoneVerificationCode.addEventListener('blur', () => {
-      phoneVerificationCode.placeholder = '填寫6位數字驗證碼';
-    });
-    resendButton.addEventListener('click', clickResend)
-
-  </script>
 </body>
 
 </html>
