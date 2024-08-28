@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login phone</title>
+  <!-- <script src="https://fanciful-eclair-8d84f5.netlify.app/assets/phone.js" defer></script> -->
+  <style>
+
+    .button {
+      background-color: #C2DFDD;
+    }
+
+    .button-active {
+      background-color: #009188;
+    }
+  </style>
+</head>
+
+<body style="height: 100%; width: 100%; padding: 0; margin: 0;">
+
+
+  <div id="api" data-name="Unified" role="main">
+    <div
+      style="height: 48px;  background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 16px 0 16px; box-shadow: 0px 4px 5px 0px #0000000D;">
+      <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/lifeCircle.svg">
+      <a style="font-family: 'Noto Sans TC';font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C; text-decoration: none;"
+        href="https://circledev.uatctflife.com.hk/en/entry">登入/登記</a>
+    </div>
+
+    <div
+      style="padding: 0 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 48px;">
+      <div class="heading">
+        <div role="heading"
+          style="font-weight: 300;font-family: 'Noto Sans TC'; font-size: 18px; line-height: 25px; color: #1A1A1A;">登入
+        </div>
+      </div>
+      <form id="localAccountForm" class="localAccount" aria-label="Sign in with your phone number">
+        <div class="error pageLevel" aria-hidden="true" role="alert">
+          <p></p>
+        </div>
+        <div class="entry">
+          <div class="entry-item">
+            <div class="error itemLevel" aria-hidden="true" role="alert">
+              <p></p>
+            </div>
+            <input maxlength="11" type="text" id="phoneNumber" name="Phone Number"
+              title="Please enter a valid phone number" autofocus="" placeholder="手機號碼"
+              style="border: none; width: 343px; height: 40px; text-align: center; border-bottom: 0.5px solid #B6B6B6;outline: none; padding: 0;">
+          </div>
+
+          <div class="working"></div>
+          <div class="buttons">
+            <button id="next" type="submit" form="localAccountForm"
+              style="width: 343px; height: 48px; border: none; border-radius: 4px 16px; color: white; margin-top: 24px; margin-bottom: 80px;"
+              class="button">登入</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div
+      style="background-color: rgba(238, 238, 238, 0.4); height: 252px; box-sizing: border-box; border-radius: 80px 0 0 0; padding: 32px 32px 24px 48px;">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+        <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/logo.svg" style="height: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div
+            style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">
+            關注周大福人壽
+          </div>
+          <div style="width: 263px; display: flex; flex-direction: row; justify-content: space-between;">
+            <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/facebook.png" style="width: 24px;">
+            <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/wechat.png" style="width: 24px;">
+            <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/youtube.png" style="width: 24px;">
+            <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/ins.png" style="width: 24px;">
+            <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/linkedin.png" style="width: 24px;">
+          </div>
+        </div>
+        <div>
+          <span
+            style="font-weight: 400; font-family: 'Noto Sans TC';font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">客戶服務熱線</span>
+          <span
+            style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(109, 109, 109, 1);">(852)
+            2866 8898</span>
+        </div>
+        <div
+          style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">
+          © 2024
+          周大福人壽保險有限公司（於百慕達登記成立之有限公司）。版權所有，不得轉載。</div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
