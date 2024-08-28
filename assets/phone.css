@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Light.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Regular.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Medium.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Bold.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  .button-active {
+    background-color: #009188 !important;
+  }
+
+  .intro {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .intro h2 {
+    font-weight: 300;
+    font-family: 'Noto Sans TC';
+    font-size: 18px;
+    line-height: 25px;
+    color: #1A1A1A;
+  }
+
+  .entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .entry-item label {
+    display: none;
+  }
+
+  .entry-item input {
+    border: none;
+    width: 343px;
+    height: 40px;
+    text-align: center;
+    border-bottom: 0.5px solid #B6B6B6;
+    outline: none;
+    padding: 0;
+  }
+
+  .buttons button {
+    width: 343px;
+    height: 48px;
+    border: none;
+    border-radius: 4px 16px;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 80px;
+    background-color: #C2DFDD;
+  }
+
+  .claims-provider-list-text-links {
+    display: none;
+  }
