@@ -30,6 +30,10 @@
     font-display: fallback;
   }
 
+  body {
+    margin: 0;
+  }
+
   .button-active {
     background-color: #009188 !important;
   }
@@ -79,5 +83,14 @@
   }
 
   .claims-provider-list-text-links {
+    display: none;
+  }
+
+  .imprint-en:lang(en),
+  .imprint-sc:lang(zh-Hans),
+  .imprint-tc:lang(zh-Hant){
+    display: inherit !important;
+  }
+  .imprint {
     display: none;
   }

@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>country+phone</title>
-    <link href="https://fanciful-eclair-8d84f5.netlify.app/assets/country.css" rel="stylesheet" type="text/css"
-        data-preload="true">
-    <script src="https://fanciful-eclair-8d84f5.netlify.app/assets/country.js" defer></script>
+    <link href="./country.css" rel="stylesheet" type="text/css" data-preload="true">
+    <script src="./country.js" defer></script>
 </head>
 
 <body style="width: 100%; height: 100%; padding: 0; margin: 0;">
@@ -15,8 +14,12 @@
     <div
         style="height: 48px;  background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 16px 0 16px; box-shadow: 0px 4px 5px 0px #0000000D;">
         <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/lifeCircle.svg">
-        <div style="font-family: 'Noto Sans TC';font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C;">
+        <div style="font-family: 'Noto Sans TC';font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C;"
+            class="imprint imprint-tc">
             登入/登記</div>
+        <div style="font-family: 'Noto Sans TC';font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C;"
+            class="imprint imprint-en">
+            Log in/Register</div>
     </div>
 
     <div id="api" data-name="Unified" role="main">
@@ -282,9 +285,9 @@
                         <div class="attrEntry"><label id="nationalNumber_label" for="nationalNumber"
                                 class="required">Phone Number</label>
                             <div class="error itemLevel" role="alert"></div><input id="nationalNumber" class="textInput"
-                                type="text" placeholder="Phone Number" value="" title="Enter National Phone Number"
-                                aria-required="true"><a class="helpLink tiny" href="javascript:void(0)"
-                                data-help="Enter National Phone Number">What is this?</a>
+                                type="text" placeholder="Phone Number" value="18566047361"
+                                title="Enter National Phone Number" aria-required="true"><a class="helpLink tiny"
+                                href="javascript:void(0)" data-help="Enter National Phone Number">What is this?</a>
                         </div>
                     </li>
                 </ul>
@@ -313,9 +316,13 @@
         <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
             <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/logo.svg" style="height: 40px;">
             <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div
+                <div class="imprint imprint-tc"
                     style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">
                     關注周大福人壽
+                </div>
+                <div class="imprint imprint-en"
+                    style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">
+                    Follow CTF Life
                 </div>
                 <div style="width: 263px; display: flex; flex-direction: row; justify-content: space-between;">
                     <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/facebook.png" style="width: 24px;">
@@ -326,16 +333,23 @@
                 </div>
             </div>
             <div>
-                <span
+                <span class="imprint imprint-tc"
                     style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">客戶服務熱線</span>
+                <span class="imprint imprint-en"
+                    style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">Customer
+                    Service:</span>
                 <span
                     style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(109, 109, 109, 1);">(852)
                     2866 8898</span>
             </div>
-            <div
+            <div class="imprint imprint-tc"
                 style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">
                 © 2024
                 周大福人壽保險有限公司（於百慕達登記成立之有限公司）。版權所有，不得轉載。</div>
+            <div class="imprint imprint-en"
+                style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">
+                © 2024 Chow Tai Fook Life Insurance Company Limited (Incorporated in Bermuda with limited liability).
+                All rights reserved.</div>
         </div>
     </div>
 

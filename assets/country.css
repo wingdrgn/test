@@ -30,6 +30,10 @@
     font-display: fallback;
 }
 
+body {
+    margin: 0;
+  }
+
 .custom-select {
     width: 95px;
     height: 39px;
@@ -109,7 +113,7 @@
     outline: none;
     border: none;
     border-bottom: 0.5px solid #B6B6B6;
-    display: none;
+    /* display: none; */
 }
 
 #attributeVerification {
@@ -148,4 +152,13 @@
 .rotate {
    transform: rotate(180deg);
    padding-left: 8px;
+}
+
+.imprint-en:lang(en),
+.imprint-sc:lang(zh-Hans),
+.imprint-tc:lang(zh-Hant){
+  display: inherit !important;
+}
+.imprint {
+  display: none;
 }
