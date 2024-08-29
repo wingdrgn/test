@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Light.otf') format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Regular.otf') format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Medium.otf') format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Bold.otf') format('opentype');
+    font-display: fallback;
+}
+
+.custom-select {
+    width: 95px;
+    height: 40px;
+    border-bottom: 1px solid #B6B6B6;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selected {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #B6B6B6;
+    width: 100%;
+    z-index: 1;
+}
+
+.options div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.options div:hover {
+    background: #f0f0f0;
+}
+
+.button {
+    background-color: #C2DFDD;
+}
+
+.button-active {
+    background-color: #009188;
+}
+
+.heading h1,
+.helpLink,
+.disclaimer-container,
+.attrEntry label {
+    display: none;
+}
+
+.intro p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#api {
+    padding: 48px 16px 80px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.attr ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.dropdown_single {
+    height: 40px;
+    width: 95px;
+    outline: none;
+    border: none;
+    border-bottom: 0.5px solid #B6B6B6;
+
+}
+
+#attributeVerification {
+    width: 100%;
+}
+
+.textInput {
+    height: 39px;
+    width: 240px;
+    padding: 0;
+    border: none;
+    border-bottom: 0.5px solid #B6B6B6;
+    outline: none;
+}
+
+.buttons button {
+    width: 343px;
+    height: 48px;
+    border-radius: 4px 16px;
+    border: none;
+    background-color: #009188;
+    color: white;
+}
