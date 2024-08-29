@@ -98,7 +98,8 @@
     list-style-type: none;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 8px;
     padding: 0;
 }
 
