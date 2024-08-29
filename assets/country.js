@@ -121,6 +121,8 @@
 const continueButton = document.getElementById('continue')
 document.addEventListener('DOMContentLoaded', function () {
   continueButton.disabled = true // 在页面加载时禁用按钮
+  nationalNumber.maxLength = 11
+  validateInput()
 })
 
 const nationalNumber = document.getElementById('nationalNumber')
@@ -136,7 +138,6 @@ function updateButtonState() {
   }
 }
 function validateInput() {
-  nationalNumber.maxLength = 11
   console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
   if (
     // (select.value === 'ZH' && nationalNumber.value.trim().length === 11) ||
@@ -146,7 +147,8 @@ function validateInput() {
     nationalNumberValid = true
     continueButton.disabled = false
   } else {
-    nationalNumbereValid = false
+    nationalNumberValid = false
+    continueButton.disabled = true
   }
   updateButtonState()
 }
@@ -166,7 +168,7 @@ phoneVerificationCode.maxLength = 6
 const placeholder = phoneVerificationCode.placeholder
 let phoneVerificationCodeValid = false
 
-function validateInput() {
+function validateOtpInput() {
   if (phoneVerificationCode.value.trim().length === 6) {
     phoneVerificationCodeValid = true
   } else {
@@ -174,10 +176,10 @@ function validateInput() {
   }
   updateButtonState()
 }
-phoneVerificationCode.addEventListener('input', validateInput)
+phoneVerificationCode.addEventListener('input', validateOtpInput)
 phoneVerificationCode.addEventListener('focus', () => {
   phoneVerificationCode.placeholder = ''
-  validateInput()
+  validateOtpInput()
 })
 phoneVerificationCode.addEventListener('blur', () => {
   phoneVerificationCode.placeholder = placeholder
