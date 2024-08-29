@@ -5,94 +5,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>otp</title>
-      <link href="https://fanciful-eclair-8d84f5.netlify.app/assets/otp.css" rel="stylesheet" type="text/css"
-        data-preload="true">
+  <link href="https://fanciful-eclair-8d84f5.netlify.app/assets/otp.css" rel="stylesheet" type="text/css"
+    data-preload="true">
   <script src="https://fanciful-eclair-8d84f5.netlify.app/assets/otp.js" defer></script>
-
 </head>
 
 <body style="width: 100%; height: 100%; padding: 0; margin: 0;">
-
+  <div
+    style="height: 48px;  background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 16px 0 16px; box-shadow: 0px 4px 5px 0px #0000000D;">
+    <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/lifeCircle.svg">
+    <a style="font-family: 'Noto Sans TC';font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C; text-decoration: none;"
+      href="https://circledev.uatctflife.com.hk/en/entry">登入/登記</a>
+  </div>
 
   <div id="api" data-name="SelfAsserted" role="main">
-    <!-- <div class="heading">
-      <div role="heading">請填寫我們發送到 +852 *****567 的一次性驗證碼</div>
-    </div> -->
-    <div
-      style="height: 48px;  background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 16px 0 16px; box-shadow: 0px 4px 5px 0px #0000000D;">
-      <img src="./src/assets/images/header/lifeCircle.svg">
-      <a style="font-size: 15px; font-weight: 700; font-family: 'Noto Sans TC'; line-height: 22px; color: #B78E6C; text-decoration: none;"
-        href="https://circledev.uatctflife.com.hk/en/entry">登入/登記</a>
+    <div class="heading">
+      <h1 role="heading">User Details</h1>
     </div>
-    <div
-      style="text-align: center; font-size: 18px; font-weight: 300; font-family: 'Noto Sans TC'; line-height: 25px; padding: 40px 16px 80px 16px;">
-      <!-- <div id="resendMessage"
-        style="padding-top: 16px; font-size: 14px; font-weight: 400; font-family: 'Noto Sans TC'; line-height: 20px; color: #B78E6C; display: none;">
-        <div>已發送新的驗證碼</div>
-      </div> -->
-      <div
-        style="padding-top: 16px; padding-bottom: 48px; font-size: 12px; font-weight: 400; font-family: 'Noto Sans TC'; line-height: 17px;">
-        <div>驗證碼有效期為10分鐘</div>
+    <div class="buttons">
+    </div>
+    <div class="intro">
+      <p>Please verify your country code and phone number</p>
+    </div>
+    <form id="attributeVerification">
+      <div id="requiredFieldMissing" class="error pageLevel" style="display: none;" aria-hidden="true">A required field
+        is missing. Please fill out all required fields and try again.</div>
+      <div id="fieldIncorrect" class="error pageLevel" style="display: none;" aria-hidden="true">One or more fields are
+        filled out incorrectly. Please check your entries and try again.</div>
+      <div id="captchaUnresolved" class="error pageLevel" style="display: none;" aria-hidden="true">Captcha challenge is
+        not resolved. Please solve it to proceed.</div>
+      <div id="claimVerificationServerError" class="error pageLevel" style="display: none;" aria-hidden="true"></div>
+      <div id="attributeList" class="attr">
+        <ul>
+          <li class="TextBox phoneVerificationCode_li">
+            <div class="attrEntry">
+              <div class="error itemLevel" role="alert"></div><input id="phoneVerificationCode" class="textInput"
+                type="text" placeholder="Phone Verification Code" aria-label="Phone Verification Code"
+                title="Enter your SMS verification code received in the email." aria-required="true"
+                autofocus="autofocus"><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)"
+                data-help="Enter your SMS verification code received in the email.">What is this?</a>
+            </div>
+          </li>
+        </ul>
       </div>
-      <form id="attributeVerification">
-        <div id="attributeList">
-          <div class="attrEntry">
-            <input id="phoneVerificationCode" type="text" placeholder="填寫6位數字驗證碼" maxlength="6"
-              style="border: none; width: 343px; height: 40px; text-align: center; border-bottom: 0.5px solid #B6B6B6;outline: none; padding: 0;">
-            <div style="display: none;">
-              <img src="./src/assets/images/wrongInput.svg">
-              <p
-                style="font-weight: 400; font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: #F55050;">
-                驗證碼不正確，請檢查後再試或重新發送新的驗證碼
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="buttons">
-          <button id="continue" type="submit" form="attributeVerification" disabled
-            style="width: 343px; height: 48px; border: none; border-radius: 4px 16px; color: white; margin-top: 24px;"
-            class="button">下一步</button>
-        </div>
+      <div class="buttons">
+        <button id="continue" type="submit" form="attributeVerification" aria-disabled="false"
+          aria-label="Continue">Continue</button>
+      </div>
 
-      </form>
-      <!-- <button id="resend"
-        style="width: 100%; height: 48px; border: none; background-color: white; color: #009188; margin-top: 16px;">重新發送</button> -->
-
-    </div>
-
-
-    <div
-        style="background-color: rgba(238, 238, 238, 0.4); height: 252px; box-sizing: border-box; border-radius: 80px 0 0 0; padding: 32px 32px 24px 48px;">
-        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
-            <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/logo.svg" style="height: 40px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div
-                    style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">
-                    關注周大福人壽
-                </div>
-                <div style="width: 263px; display: flex; flex-direction: row; justify-content: space-between;">
-                    <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/facebook.png" style="width: 24px;">
-                    <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/wechat.png" style="width: 24px;">
-                    <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/youtube.png" style="width: 24px;">
-                    <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/ins.png" style="width: 24px;">
-                    <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/linkedin.png" style="width: 24px;">
-                </div>
-            </div>
-            <div>
-                <span
-                    style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">客戶服務熱線</span>
-                <span
-                    style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(109, 109, 109, 1);">(852)
-                    2866 8898</span>
-            </div>
-            <div
-                style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">
-                © 2024
-                周大福人壽保險有限公司（於百慕達登記成立之有限公司）。版權所有，不得轉載。</div>
-        </div>
+      <div class="verifying-modal" aria-live="assertive" aria-labelledby="verifying_blurb">
+        <div id="verifying_blurb"></div>
+      </div>
+    </form>
+    <div class="disclaimer-container disclaimer-container-page-level">
+      <div class="disclaimer-msg-intro"
+        aria-label="By providing your phone number, you consent to receiving a one-time passcode sent by text message to help you sign into {insert your application name}. Standard messsage and data rates may apply.">
+        By providing your phone number, you consent to receiving a one-time passcode sent by text message to help you
+        sign into {insert your application name}. Standard messsage and data rates may apply.</div><a
+        class="disclaimer-link" href="https://jwt.ms" aria-label="Privacy Statement">Privacy Statement</a><a
+        class="disclaimer-link" href="https://jwt.ms" aria-label="Terms and Conditions">Terms and Conditions</a>
     </div>
   </div>
 
+  <div
+    style="background-color: rgba(238, 238, 238, 0.4); height: 252px; box-sizing: border-box; border-radius: 80px 0 0 0; padding: 32px 32px 24px 48px;">
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+      <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/logo.svg" style="height: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div
+          style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">
+          關注周大福人壽
+        </div>
+        <div style="width: 263px; display: flex; flex-direction: row; justify-content: space-between;">
+          <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/facebook.png" style="width: 24px;">
+          <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/wechat.png" style="width: 24px;">
+          <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/youtube.png" style="width: 24px;">
+          <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/ins.png" style="width: 24px;">
+          <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/linkedin.png" style="width: 24px;">
+        </div>
+      </div>
+      <div>
+        <span
+          style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(0, 145, 136, 1);">客戶服務熱線</span>
+        <span
+          style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 12px; line-height: 17px; color: rgba(109, 109, 109, 1);">(852)
+          2866 8898</span>
+      </div>
+      <div
+        style="font-weight: 400;font-family: 'Noto Sans TC'; font-size: 11px; line-height: 15px; color: rgba(182, 182, 182, 1);">
+        © 2024
+        周大福人壽保險有限公司（於百慕達登記成立之有限公司）。版權所有，不得轉載。</div>
+    </div>
+  </div>
 </body>
 
 </html>
