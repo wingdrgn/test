@@ -138,7 +138,8 @@ body {
 .heading h1,
 .helpLink,
 .disclaimer-container,
-.attrEntry label {
+.attrEntry label,
+#verifying_blurb {
     display: none;
 }
 
@@ -153,6 +154,13 @@ body {
     font-weight: 400; 
     line-height: 15px; 
     color: #F55050; 
+}
+
+.pageLevel {
+  font-size: 11px;
+    font-weight: 400;
+    line-height: 15px;
+    color: #F55050;
 }
 
 .intro p {
