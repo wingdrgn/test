@@ -1,4 +1,32 @@
 @font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Light.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Regular.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Medium.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Bold.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
     font-family: 'Noto Sans TC';
     font-style: normal;
     font-weight: 300;
@@ -30,8 +58,41 @@
     font-display: fallback;
   }
 
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
   body {
     margin: 0;
+  }
+
+  #api {
+    padding: 0 16px;
   }
 
   .button-active {
