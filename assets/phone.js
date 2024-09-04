@@ -45,6 +45,7 @@ setFontFamilyByLocale(locale)
 
 const continueButton = document.getElementById('next')
 const phoneNumber = document.getElementById('phoneNumber')
+const defaultPlaceholder = phoneNumber.placeholder
 phoneNumber.maxLength = 11
 let numberValid = false
 function updateButtonState() {
@@ -70,18 +71,17 @@ phoneNumber.addEventListener('focus', () => {
   validateInput()
 })
 phoneNumber.addEventListener('blur', () => {
-  phoneNumber.placeholder =
-    locale === 'en' ? 'Please enter Your Mobile Number' : '手機號碼'
+  phoneNumber.placeholder = defaultPlaceholder
 })
 
 // text
-if (locale === 'en') {
-  document.querySelector('.intro h2').textContent =
-    'Welcome back to CTF Life ∙ CIRCLE! Please log in with your mobile number'
-  document.querySelector('#phoneNumber').placeholder =
-    'Please enter Your Mobile Number'
-} else {
-  document.querySelector('.intro h2').textContent =
-    '歡迎回到「周大福人壽 • 生活圈」！請以手機號碼登入'
-  document.querySelector('#phoneNumber').placeholder = '手機號碼'
-}
+// if (locale === 'en') {
+//   document.querySelector('.intro h2').textContent =
+//     'Welcome back to CTF Life ∙ CIRCLE! Please log in with your mobile number'
+//   document.querySelector('#phoneNumber').placeholder =
+//     'Please enter Your Mobile Number'
+// } else {
+//   document.querySelector('.intro h2').textContent =
+//     '歡迎回到「周大福人壽 • 生活圈」！請以手機號碼登入'
+//   document.querySelector('#phoneNumber').placeholder = '手機號碼'
+// }

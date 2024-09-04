@@ -166,6 +166,8 @@ setFontFamilyByLocale(locale)
 //countrycode page
 const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')
+const defaultPlaceholder = nationalNumber.placeholder
+let nationalNumberValid = false
 function validateInput() {
   console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
   if (
@@ -191,7 +193,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const select = document.getElementById('countryCode')
 select.value = 'HK'
-let nationalNumberValid = false
 function updateButtonState() {
   if (nationalNumberValid) {
     continueButton.classList.add('button-active')
@@ -208,13 +209,13 @@ if (nationalNumber) {
     validateInput()
   })
   nationalNumber.addEventListener('blur', () => {
-    nationalNumber.placeholder =
-      locale === 'en' ? 'Please enter Your Mobile Number' : '手機號碼'
+    nationalNumber.placeholder = defaultPlaceholder
   })
 }
 
 // otp
 const phoneVerificationCode = document.getElementById('phoneVerificationCode')
+const otpDefaultPlaceholder = phoneVerificationCode.placeholder
 let phoneVerificationCodeValid = false
 function updateOtpButtonState() {
   if (phoneVerificationCodeValid) {
@@ -227,10 +228,7 @@ function updateOtpButtonState() {
 }
 if (phoneVerificationCode) {
   phoneVerificationCode.maxLength = 6
-  phoneVerificationCode.placeholder =
-    locale === 'en'
-      ? 'Enter the 6-digit verification code'
-      : '填寫6位數字驗證碼'
+  phoneVerificationCode.placeholder = otpDefaultPlaceholder
 
   function validateOtpInput() {
     if (phoneVerificationCode.value.trim().length === 6) {
@@ -246,17 +244,14 @@ if (phoneVerificationCode) {
     validateOtpInput()
   })
   phoneVerificationCode.addEventListener('blur', () => {
-    phoneVerificationCode.placeholder =
-      locale === 'en'
-        ? 'Enter the 6-digit verification code'
-        : '填寫6位數字驗證碼'
+    phoneVerificationCode.placeholder = otpDefaultPlaceholder
   })
 }
 
 // text
-if (locale === 'en') {
-  document.querySelector('#nationalNumber').placeholder =
-    'Please enter Your Mobile Number'
-} else {
-  document.querySelector('#nationalNumber').placeholder = '手機號碼'
-}
+// if (locale === 'en') {
+//   document.querySelector('#nationalNumber').placeholder =
+//     'Please enter Your Mobile Number'
+// } else {
+//   document.querySelector('#nationalNumber').placeholder = '手機號碼'
+// }
