@@ -98,6 +98,7 @@ try {
 // otp
 const phoneVerificationCode = document.getElementById('phoneVerificationCode')
 try {
+  continueButton.disabled = true
   phoneVerificationCode.maxLength = 6
   const otpDefaultPlaceholder = phoneVerificationCode.placeholder
   let phoneVerificationCodeValid = false
@@ -112,10 +113,8 @@ try {
   }
   if (phoneVerificationCode) {
 
-    phoneVerificationCode.placeholder = otpDefaultPlaceholder
-
     function validateOtpInput() {
-      if (phoneVerificationCode.value.trim().length === 6) {
+      if (phoneVerificationCode.value.trim().length >= 6) {
         phoneVerificationCodeValid = true
       } else {
         phoneVerificationCodeValid = false
