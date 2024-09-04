@@ -45,85 +45,97 @@ setFontFamilyByLocale(locale)
 
 //countrycode page
 const nationalNumber = document.getElementById('nationalNumber')
-nationalNumber.maxLength = 11
 const continueButton = document.getElementById('continue')
 const select = document.getElementById('countryCode')
-select.value = 'HK'
-continueButton.disabled = true
-const defaultPlaceholder = nationalNumber.placeholder
-let nationalNumberValid = false
-function validateInput() {
-  console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
-  if (
-    // (select.value === 'ZH' && nationalNumber.value.trim().length === 11) ||
-    // (select.value !== 'ZH' && nationalNumber.value.trim().length === 8)
-    nationalNumber.value.trim().length >= 8
-  ) {
-    nationalNumberValid = true
-    continueButton.disabled = false
-  } else {
-    nationalNumberValid = false
-    continueButton.disabled = true
+try {
+  nationalNumber.maxLength = 11
+  select.value = 'HK'
+  continueButton.disabled = true
+  const defaultPlaceholder = nationalNumber.placeholder
+  let nationalNumberValid = false
+  function validateInput() {
+    console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
+    if (
+      // (select.value === 'ZH' && nationalNumber.value.trim().length === 11) ||
+      // (select.value !== 'ZH' && nationalNumber.value.trim().length === 8)
+      nationalNumber.value.trim().length >= 8
+    ) {
+      nationalNumberValid = true
+      continueButton.disabled = false
+    } else {
+      nationalNumberValid = false
+      continueButton.disabled = true
+    }
+    updateButtonState()
   }
-  updateButtonState()
-}
-function updateButtonState() {
-  if (nationalNumberValid) {
-    continueButton.classList.add('button-active')
-    continueButton.disabled = false
-  } else {
-    continueButton.classList.remove('button-active')
-    continueButton.disabled = true
+  function updateButtonState() {
+    if (nationalNumberValid) {
+      continueButton.classList.add('button-active')
+      continueButton.disabled = false
+    } else {
+      continueButton.classList.remove('button-active')
+      continueButton.disabled = true
+    }
   }
-}
-if (nationalNumber) {
-  
-  validateInput()
-  nationalNumber.addEventListener('input', validateInput)
-  nationalNumber.addEventListener('focus', () => {
-    nationalNumber.placeholder = ''
+  if (nationalNumber) {
+
     validateInput()
-  })
-  nationalNumber.addEventListener('blur', () => {
-    nationalNumber.placeholder = defaultPlaceholder
-  })
+    nationalNumber.addEventListener('input', validateInput)
+    nationalNumber.addEventListener('focus', () => {
+      nationalNumber.placeholder = ''
+      validateInput()
+    })
+    nationalNumber.addEventListener('blur', () => {
+      nationalNumber.placeholder = defaultPlaceholder
+    })
+  }
+} catch (error) {
+  console.log(error)
+  console.log('isn`t country page')
 }
+
 
 // otp
 const phoneVerificationCode = document.getElementById('phoneVerificationCode')
-phoneVerificationCode.maxLength = 6
-const otpDefaultPlaceholder = phoneVerificationCode.placeholder
-let phoneVerificationCodeValid = false
-function updateOtpButtonState() {
-  if (phoneVerificationCodeValid) {
-    continueButton.classList.add('button-active')
-    continueButton.disabled = false
-  } else {
-    continueButton.classList.remove('button-active')
-    continueButton.disabled = true
-  }
-}
-if (phoneVerificationCode) {
-  
-  phoneVerificationCode.placeholder = otpDefaultPlaceholder
-
-  function validateOtpInput() {
-    if (phoneVerificationCode.value.trim().length === 6) {
-      phoneVerificationCodeValid = true
+try {
+  phoneVerificationCode.maxLength = 6
+  const otpDefaultPlaceholder = phoneVerificationCode.placeholder
+  let phoneVerificationCodeValid = false
+  function updateOtpButtonState() {
+    if (phoneVerificationCodeValid) {
+      continueButton.classList.add('button-active')
+      continueButton.disabled = false
     } else {
-      phoneVerificationCodeValid = false
+      continueButton.classList.remove('button-active')
+      continueButton.disabled = true
     }
-    updateOtpButtonState()
   }
-  phoneVerificationCode.addEventListener('input', validateOtpInput)
-  phoneVerificationCode.addEventListener('focus', () => {
-    phoneVerificationCode.placeholder = ''
-    validateOtpInput()
-  })
-  phoneVerificationCode.addEventListener('blur', () => {
+  if (phoneVerificationCode) {
+
     phoneVerificationCode.placeholder = otpDefaultPlaceholder
-  })
+
+    function validateOtpInput() {
+      if (phoneVerificationCode.value.trim().length === 6) {
+        phoneVerificationCodeValid = true
+      } else {
+        phoneVerificationCodeValid = false
+      }
+      updateOtpButtonState()
+    }
+    phoneVerificationCode.addEventListener('input', validateOtpInput)
+    phoneVerificationCode.addEventListener('focus', () => {
+      phoneVerificationCode.placeholder = ''
+      validateOtpInput()
+    })
+    phoneVerificationCode.addEventListener('blur', () => {
+      phoneVerificationCode.placeholder = otpDefaultPlaceholder
+    })
+  }
+} catch (error) {
+  console.log(error)
+  console.log('isn`t otp page')
 }
+
 
 // text
 // if (locale === 'en') {
