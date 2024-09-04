@@ -1,6 +1,29 @@
 const params = new URLSearchParams(window.location.search)
 const locale = params.get('ui_locales')
 
+function navigate(type) {
+  switch (type) {
+    case 1:
+      window.location.href = `https://circledev.uatctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/login`
+      break
+    case 2:
+      window.location.href = `https://www.facebook.com/CTFLifehk`
+      break
+    case 3:
+      window.location.href = `https://www.ctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/wechat`
+      break
+    case 4:
+      window.location.href = `https://www.youtube.com/@CTFLifehk`
+      break
+    case 5:
+      window.location.href = `https://www.instagram.com/ctflifehk`
+      break
+    case 6:
+      window.location.href = `https://www.linkedin.com/company/ctflifehk`
+      break
+  }
+}
+
 const setFontFamilyByLocale = (locale) => {
   const body = document.body
   switch (locale) {

@@ -155,12 +155,11 @@ body {
     line-height: 15px; 
     color: #F55050; 
 }
-
 .pageLevel {
-  font-size: 11px;
-    font-weight: 400;
-    line-height: 15px;
-    color: #F55050;
+    font-size: 11px; 
+    font-weight: 400; 
+    line-height: 15px; 
+    color: #F55050; 
 }
 
 .intro p {
@@ -240,4 +239,8 @@ body {
 }
 .imprint {
   display: none;
+}
+
+#phoneVerificationCode {
+    width: 343px;
 }

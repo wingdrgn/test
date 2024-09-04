@@ -118,9 +118,33 @@
 //   }
 // })
 
+// header footer navigate
 const params = new URLSearchParams(window.location.search)
-const locale = params.get('ui_locales')
+const locale = params.get('ui_locales') || 'en'
+function navigate(type) {
+  switch (type) {
+    case 1:
+      window.location.href = `https://circledev.uatctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/login`
+      break
+    case 2:
+      window.location.href = `https://www.facebook.com/CTFLifehk`
+      break
+    case 3:
+      window.location.href = `https://www.ctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/wechat`
+      break
+    case 4:
+      window.location.href = `https://www.youtube.com/@CTFLifehk`
+      break
+    case 5:
+      window.location.href = `https://www.instagram.com/ctflifehk`
+      break
+    case 6:
+      window.location.href = `https://www.linkedin.com/company/ctflifehk`
+      break
+  }
+}
 
+// set font family
 const setFontFamilyByLocale = (locale) => {
   const body = document.body
   switch (locale) {
@@ -137,29 +161,11 @@ const setFontFamilyByLocale = (locale) => {
       body.style.fontFamily = 'Noto Sans TC'
   }
 }
-
 setFontFamilyByLocale(locale)
 
-const continueButton = document.getElementById('continue')
-document.addEventListener('DOMContentLoaded', function () {
-  continueButton.disabled = true // 在页面加载时禁用按钮
-  nationalNumber.maxLength = 11
-  validateInput()
-})
-
+//countrycode page
 const nationalNumber = document.getElementById('nationalNumber')
-const select = document.getElementById('countryCode')
-select.value = 'HK'
-let nationalNumberValid = false
-function updateButtonState() {
-  if (nationalNumberValid) {
-    continueButton.classList.add('button-active')
-    continueButton.disabled = false
-  } else {
-    continueButton.classList.remove('button-active')
-    continueButton.disabled = true
-  }
-}
+const continueButton = document.getElementById('continue')
 function validateInput() {
   console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
   if (
@@ -175,44 +181,77 @@ function validateInput() {
   }
   updateButtonState()
 }
+document.addEventListener('DOMContentLoaded', function () {
+  continueButton.disabled = true
+  if (nationalNumber) {
+    nationalNumber.maxLength = 11
+    validateInput()
+  }
+})
 
-nationalNumber.addEventListener('input', validateInput)
-nationalNumber.addEventListener('focus', () => {
-  nationalNumber.placeholder = ''
-  validateInput()
-})
-nationalNumber.addEventListener('blur', () => {
-  nationalNumber.placeholder =
-    locale === 'en' ? 'Please enter Your Mobile Number' : '手機號碼'
-})
+const select = document.getElementById('countryCode')
+select.value = 'HK'
+let nationalNumberValid = false
+function updateButtonState() {
+  if (nationalNumberValid) {
+    continueButton.classList.add('button-active')
+    continueButton.disabled = false
+  } else {
+    continueButton.classList.remove('button-active')
+    continueButton.disabled = true
+  }
+}
+if (nationalNumber) {
+  nationalNumber.addEventListener('input', validateInput)
+  nationalNumber.addEventListener('focus', () => {
+    nationalNumber.placeholder = ''
+    validateInput()
+  })
+  nationalNumber.addEventListener('blur', () => {
+    nationalNumber.placeholder =
+      locale === 'en' ? 'Please enter Your Mobile Number' : '手機號碼'
+  })
+}
 
 // otp
 const phoneVerificationCode = document.getElementById('phoneVerificationCode')
-phoneVerificationCode.maxLength = 6
-phoneVerificationCode.placeholder =
-  locale === 'en' ? 'Enter the 6-digit verification code' : '填寫6位數字驗證碼'
-// const placeholder = phoneVerificationCode.placeholder
 let phoneVerificationCodeValid = false
-
-function validateOtpInput() {
-  if (phoneVerificationCode.value.trim().length === 6) {
-    phoneVerificationCodeValid = true
+function updateOtpButtonState() {
+  if (phoneVerificationCodeValid) {
+    continueButton.classList.add('button-active')
+    continueButton.disabled = false
   } else {
-    phoneVerificationCodeValid = false
+    continueButton.classList.remove('button-active')
+    continueButton.disabled = true
   }
-  updateButtonState()
 }
-phoneVerificationCode.addEventListener('input', validateOtpInput)
-phoneVerificationCode.addEventListener('focus', () => {
-  phoneVerificationCode.placeholder = ''
-  validateOtpInput()
-})
-phoneVerificationCode.addEventListener('blur', () => {
+if (phoneVerificationCode) {
+  phoneVerificationCode.maxLength = 6
   phoneVerificationCode.placeholder =
     locale === 'en'
       ? 'Enter the 6-digit verification code'
       : '填寫6位數字驗證碼'
-})
+
+  function validateOtpInput() {
+    if (phoneVerificationCode.value.trim().length === 6) {
+      phoneVerificationCodeValid = true
+    } else {
+      phoneVerificationCodeValid = false
+    }
+    updateOtpButtonState()
+  }
+  phoneVerificationCode.addEventListener('input', validateOtpInput)
+  phoneVerificationCode.addEventListener('focus', () => {
+    phoneVerificationCode.placeholder = ''
+    validateOtpInput()
+  })
+  phoneVerificationCode.addEventListener('blur', () => {
+    phoneVerificationCode.placeholder =
+      locale === 'en'
+        ? 'Enter the 6-digit verification code'
+        : '填寫6位數字驗證碼'
+  })
+}
 
 // text
 if (locale === 'en') {
