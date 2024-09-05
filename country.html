@@ -5,9 +5,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>country+phone</title>
-    <link href="https://fanciful-eclair-8d84f5.netlify.app/assets/country.css" rel="stylesheet" type="text/css"
+    <!-- <link href="https://fanciful-eclair-8d84f5.netlify.app/assets/country.css" rel="stylesheet" type="text/css"
         data-preload="true">
-    <script src="https://fanciful-eclair-8d84f5.netlify.app/assets/country.js" defer></script>
+    <script src="https://fanciful-eclair-8d84f5.netlify.app/assets/country.js" defer></script> -->
+    <style>
+      @font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 300;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Light.otf') format('opentype');
+    font-display: fallback;
+  }
+  @font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Regular.otf') format('opentype');
+    font-display: fallback;
+  }
+  @font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Medium.otf') format('opentype');
+    font-display: fallback;
+  }
+  @font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Bold.otf') format('opentype');
+    font-display: fallback;
+  }
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Light.otf') format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Regular.otf') format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Medium.otf') format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Bold.otf') format('opentype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+body {
+    margin: 0;
+  }
+
+.custom-select {
+    width: 95px;
+    height: 39px;
+    border-bottom: 1px solid #B6B6B6;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    background: white;
+    cursor: pointer;
+}
+
+.selected {
+    padding: 10px;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #B6B6B6;
+    width: 100%;
+    z-index: 1;
+    margin-top: 40px;
+}
+
+.options div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.options div:hover {
+    background: #f0f0f0;
+}
+
+.button {
+    background-color: #C2DFDD;
+}
+
+.button-active {
+    background-color: #009188 !important;
+}
+
+.heading h1,
+.helpLink,
+.disclaimer-container,
+.attrEntry label,
+#verifying_blurb {
+    display: none;
+}
+
+.nationalNumber_li .attrEntry {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.itemLevel {
+    text-align: left;
+    font-size: 11px; 
+    font-weight: 400; 
+    line-height: 15px; 
+    color: #F55050; 
+}
+.pageLevel {
+    font-size: 11px; 
+    font-weight: 400; 
+    line-height: 15px; 
+    color: #F55050; 
+}
+
+.intro p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#api {
+    padding: 48px 16px 80px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.attr ul {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+}
+
+.dropdown_single {
+    height: 40px;
+    width: 95px;
+    outline: none;
+    border: none;
+    border-bottom: 0.5px solid #B6B6B6;
+    /* display: none; */
+}
+
+#attributeVerification {
+    width: 100%;
+}
+
+.textInput {
+    height: 39px;
+    width: 240px;
+    padding: 0;
+    border: none;
+    border-bottom: 0.5px solid #B6B6B6;
+    outline: none;
+}
+
+.buttons button {
+    width: 343px;
+    height: 48px;
+    border-radius: 4px 16px;
+    border: none;
+    background-color: #C2DFDD;
+    color: white;
+}
+
+.selectedContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img {
+    width: 16px;
+    padding-right: 8px;
+}
+
+.rotate {
+   transform: rotate(180deg);
+   padding-left: 8px;
+}
+
+.imprint-en:lang(en),
+.imprint-sc:lang(zh-Hans),
+.imprint-tc:lang(zh-Hant){
+  display: inherit !important;
+}
+.imprint {
+  display: none;
+}
+
+#phoneVerificationCode {
+    width: 343px;
+}
+    </style>
 </head>
 
 <body style="width: 100%; height: 100%; padding: 0; margin: 0;">
@@ -360,6 +608,154 @@
         </div>
     </div>
 
+    <script defer>
+      // header footer navigate
+const params = new URLSearchParams(window.location.search)
+const locale = params.get('ui_locales') || 'en'
+function navigate(type) {
+  switch (type) {
+    case 1:
+      window.location.href = `https://circledev.uatctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/login`
+      break
+    case 2:
+      window.location.href = `https://www.facebook.com/CTFLifehk`
+      break
+    case 3:
+      window.location.href = `https://www.ctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/wechat`
+      break
+    case 4:
+      window.location.href = `https://www.youtube.com/@CTFLifehk`
+      break
+    case 5:
+      window.location.href = `https://www.instagram.com/ctflifehk`
+      break
+    case 6:
+      window.location.href = `https://www.linkedin.com/company/ctflifehk`
+      break
+  }
+}
+
+// set font family
+const setFontFamilyByLocale = (locale) => {
+  const body = document.body
+  switch (locale) {
+    case 'zh-Hant':
+      body.style.fontFamily = 'Noto Sans TC'
+      break
+    case 'zh-Hans':
+      body.style.fontFamily = 'Noto Sans SC'
+      break
+    case 'en':
+      body.style.fontFamily = 'Poppins'
+      break
+    default:
+      body.style.fontFamily = 'Noto Sans TC'
+  }
+}
+setFontFamilyByLocale(locale)
+
+//countrycode page
+const nationalNumber = document.getElementById('nationalNumber')
+const continueButton = document.getElementById('continue')
+const select = document.getElementById('countryCode')
+try {
+  nationalNumber.maxLength = 11
+  select.value = 'HK'
+  continueButton.disabled = true
+  const defaultPlaceholder = nationalNumber.placeholder
+  let nationalNumberValid = false
+  function validateInput() {
+    console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
+    if (
+      // (select.value === 'ZH' && nationalNumber.value.trim().length === 11) ||
+      // (select.value !== 'ZH' && nationalNumber.value.trim().length === 8)
+      nationalNumber.value.trim().length >= 8
+    ) {
+      nationalNumberValid = true
+      continueButton.disabled = false
+    } else {
+      nationalNumberValid = false
+      continueButton.disabled = true
+    }
+    updateButtonState()
+  }
+  function updateButtonState() {
+    if (nationalNumberValid) {
+      continueButton.classList.add('button-active')
+      continueButton.disabled = false
+    } else {
+      continueButton.classList.remove('button-active')
+      continueButton.disabled = true
+    }
+  }
+  if (nationalNumber) {
+
+    validateInput()
+    nationalNumber.addEventListener('input', validateInput)
+    nationalNumber.addEventListener('focus', () => {
+      nationalNumber.placeholder = ''
+      validateInput()
+    })
+    nationalNumber.addEventListener('blur', () => {
+      nationalNumber.placeholder = defaultPlaceholder
+    })
+  }
+} catch (error) {
+  console.log(error)
+  console.log('isn`t country page')
+}
+
+
+// otp
+const phoneVerificationCode = document.getElementById('phoneVerificationCode')
+try {
+  continueButton.disabled = true
+  phoneVerificationCode.maxLength = 6
+  const otpDefaultPlaceholder = phoneVerificationCode.placeholder
+  let phoneVerificationCodeValid = false
+  function updateOtpButtonState() {
+    if (phoneVerificationCodeValid) {
+      continueButton.classList.add('button-active')
+      continueButton.disabled = false
+    } else {
+      continueButton.classList.remove('button-active')
+      continueButton.disabled = true
+    }
+  }
+  if (phoneVerificationCode) {
+
+    function validateOtpInput() {
+      if (phoneVerificationCode.value.trim().length >= 6) {
+        phoneVerificationCodeValid = true
+      } else {
+        phoneVerificationCodeValid = false
+      }
+      updateOtpButtonState()
+    }
+    phoneVerificationCode.addEventListener('input', validateOtpInput)
+    phoneVerificationCode.addEventListener('focus', () => {
+      phoneVerificationCode.placeholder = ''
+      validateOtpInput()
+    })
+    phoneVerificationCode.addEventListener('blur', () => {
+      phoneVerificationCode.placeholder = otpDefaultPlaceholder
+    })
+  }
+} catch (error) {
+  console.log(error)
+  console.log('isn`t otp page')
+}
+
+
+// text
+// if (locale === 'en') {
+//   document.querySelector('#nationalNumber').placeholder =
+//     'Please enter Your Mobile Number'
+// } else {
+//   document.querySelector('#nationalNumber').placeholder = '手機號碼'
+// }
+
+    </script>
 
 </body>
 

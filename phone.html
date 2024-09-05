@@ -5,15 +5,181 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>login phone</title>
-  <link href="./assets/phone.css" rel="stylesheet" type="text/css"
+  <!-- <link href="./assets/phone.css" rel="stylesheet" type="text/css"
     data-preload="true" />
-  <script src="./assets/phone.js" defer></script>
+  <script src="./assets/phone.js" defer></script> -->
+  <style>
+    @font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Light.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Regular.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Medium.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansSC-Bold.otf') format('opentype');
+  font-display: fallback;
+}
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Light.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Regular.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Medium.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/NotoSansTC-Bold.otf') format('opentype');
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('https://fanciful-eclair-8d84f5.netlify.app/assets/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #api {
+    padding: 0 16px;
+  }
+
+  .button-active {
+    background-color: #009188 !important;
+  }
+
+  .intro {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .intro h2 {
+    font-weight: 300;
+    font-family: 'Noto Sans TC';
+    font-size: 18px;
+    line-height: 25px;
+    color: #1A1A1A;
+  }
+
+  .entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .entry-item label {
+    display: none;
+  }
+
+  .entry-item input {
+    border: none;
+    width: 343px;
+    height: 40px;
+    text-align: center;
+    border-bottom: 0.5px solid #B6B6B6;
+    outline: none;
+    padding: 0;
+  }
+
+  .buttons button {
+    width: 343px;
+    height: 48px;
+    border: none;
+    border-radius: 4px 16px;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 80px;
+    background-color: #C2DFDD;
+  }
+
+  .claims-provider-list-text-links {
+    display: none;
+  }
+
+  .imprint-en:lang(en),
+  .imprint-sc:lang(zh-Hans),
+  .imprint-tc:lang(zh-Hant){
+    display: inherit !important;
+  }
+  .imprint {
+    display: none;
+  }
+
+    .pageLevel {
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 15px;
+      color: #F55050;
+    }
+  </style>
 </head>
 
 <body style="height: 100%; width: 100%; padding: 0; margin: 0;">
   <div
     style="height: 48px;  background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 16px 0 16px; box-shadow: 0px 4px 5px 0px #0000000D;">
-    <img src="./assets/lifeCircle.svg">
+    <img src="https://fanciful-eclair-8d84f5.netlify.app/assets/lifeCircle.svg">
     <div style="font-family: 'Noto Sans TC';font-size: 15px; font-weight: 700; line-height: 22px; color: #B78E6C;"
       class="imprint imprint-tc" onclick="navigate(1)">
       登入/登記</div>
@@ -108,6 +274,96 @@
     </div>
   </div>
 
+  <script defer>
+    const params = new URLSearchParams(window.location.search)
+const locale = params.get('ui_locales')
+
+function navigate(type) {
+  switch (type) {
+    case 1:
+      window.location.href = `https://circledev.uatctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/login`
+      break
+    case 2:
+      window.location.href = `https://www.facebook.com/CTFLifehk`
+      break
+    case 3:
+      window.location.href = `https://www.ctflife.com.hk/${locale === 'en' ? 'en' : 'tc'}/wechat`
+      break
+    case 4:
+      window.location.href = `https://www.youtube.com/@CTFLifehk`
+      break
+    case 5:
+      window.location.href = `https://www.instagram.com/ctflifehk`
+      break
+    case 6:
+      window.location.href = `https://www.linkedin.com/company/ctflifehk`
+      break
+  }
+}
+
+const setFontFamilyByLocale = (locale) => {
+  const body = document.body
+  switch (locale) {
+    case 'zh-Hant':
+      body.style.fontFamily = 'Noto Sans TC'
+      break
+    case 'zh-Hans':
+      body.style.fontFamily = 'Noto Sans SC'
+      break
+    case 'en':
+      body.style.fontFamily = 'Poppins'
+      break
+    default:
+      body.style.fontFamily = 'Noto Sans TC'
+  }
+}
+
+setFontFamilyByLocale(locale)
+
+const continueButton = document.getElementById('next')
+const phoneNumber = document.getElementById('phoneNumber')
+const defaultPlaceholder = phoneNumber.placeholder
+phoneNumber.maxLength = 11
+let numberValid = false
+function updateButtonState() {
+  if (numberValid) {
+    continueButton.classList.add('button-active')
+    continueButton.disabled = false
+  } else {
+    continueButton.classList.remove('button-active')
+    continueButton.disabled = true
+  }
+}
+function validateInput() {
+  if (phoneNumber.value.trim().length >= 8) {
+    numberValid = true
+  } else {
+    numberValid = false
+  }
+  updateButtonState()
+}
+phoneNumber.addEventListener('input', validateInput)
+phoneNumber.addEventListener('focus', () => {
+  phoneNumber.placeholder = ''
+  validateInput()
+})
+phoneNumber.addEventListener('blur', () => {
+  phoneNumber.placeholder = defaultPlaceholder
+})
+
+// text
+// if (locale === 'en') {
+//   document.querySelector('.intro h2').textContent =
+//     'Welcome back to CTF Life ∙ CIRCLE! Please log in with your mobile number'
+//   document.querySelector('#phoneNumber').placeholder =
+//     'Please enter Your Mobile Number'
+// } else {
+//   document.querySelector('.intro h2').textContent =
+//     '歡迎回到「周大福人壽 • 生活圈」！請以手機號碼登入'
+//   document.querySelector('#phoneNumber').placeholder = '手機號碼'
+// }
+
+  </script>
 
 </body>
 
