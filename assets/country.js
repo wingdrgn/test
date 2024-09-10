@@ -98,6 +98,8 @@ try {
 // otp
 const phoneVerificationCode = document.getElementById('phoneVerificationCode')
 try {
+  const itemError = document.getElementsByClassName('itemLevel')[0]
+  itemError.classList.add('center')
   continueButton.disabled = true
   phoneVerificationCode.maxLength = 6
   const otpDefaultPlaceholder = phoneVerificationCode.placeholder
