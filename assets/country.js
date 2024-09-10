@@ -55,9 +55,11 @@ try {
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
   // countryCode
+  const list = ['HK', 'MO', 'CN']
   const options = document.querySelectorAll('#countryCode option')
-  options.forEach(option => {
-    if (option.value !== 'HK' || option.value !== 'MO' || option.value !== 'CN') {
+  options.forEach((option, index) => {
+    console.log(option.value)
+    if (!list.includes(option.value)) {
       option.style.display = 'none'
     }
   })
