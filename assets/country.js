@@ -47,12 +47,20 @@ setFontFamilyByLocale(locale)
 const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')
 const select = document.getElementById('countryCode')
+
 try {
   nationalNumber.maxLength = 11
   select.value = 'HK'
   continueButton.disabled = true
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
+  // countryCode
+  const options = document.querySelectorAll('#countryCode option')
+  options.forEach(option => {
+    if (option.value !== 'HK' || option.value !== 'MO' || option.value !== 'CN') {
+      option.style.display = 'none'
+    }
+  })
   function validateInput() {
     console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
     if (
