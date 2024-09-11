@@ -50,7 +50,7 @@ const select = document.getElementById('countryCode')
 
 try {
   nationalNumber.maxLength = 11
-  select.value = 'HK'
+  // select.value = 'HK'
   continueButton.disabled = true
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
@@ -58,9 +58,10 @@ try {
   const list = ['HK', 'MO', 'CN']
   const options = document.querySelectorAll('#countryCode option')
   options.forEach((option, index) => {
-    console.log(option.value)
     if (!list.includes(option.value)) {
       option.style.display = 'none'
+    } else {
+      option.textContent = option.textContent?.match(/\+\d+/)[0]
     }
   })
   function validateInput() {
