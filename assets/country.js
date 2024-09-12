@@ -43,6 +43,11 @@ const setFontFamilyByLocale = (locale) => {
 }
 setFontFamilyByLocale(locale)
 
+//back button
+const back = () => {
+  window.history.back()
+}
+
 //countrycode page
 const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')

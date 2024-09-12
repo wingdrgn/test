@@ -181,7 +181,7 @@ body {
 }
 
 #api {
-    padding: 48px 16px 80px 16px;
+    padding: 48px 16px 0 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,7 +250,7 @@ body {
   display: inherit !important;
 }
 .imprint {
-  display: none;
+  display: none !important;
 }
 
 #phoneVerificationCode {
@@ -564,6 +564,15 @@ body {
                 class="disclaimer-link" href="https://jwt.ms" aria-label="Privacy Statement">Privacy Statement</a><a
                 class="disclaimer-link" href="https://jwt.ms" aria-label="Terms and Conditions">Terms and Conditions</a>
         </div>
+    </div>
+
+    <div style="width: 100%; height: 48px; margin-bottom: 80px; margin-top: 16px; display: flex; justify-content: center; cursor:pointer; font-weight: 500; font-size: 16px; line-height: 23px; color: #009188" onclick="back()">
+      <div class="imprint imprint-en" style="width: 343px; height: 48px; text-align:center; display: flex; justify-content: center; align-items: center">
+        Back
+      </div>
+      <div class="imprint imprint-tc" style="width: 343px; height: 48px; text-align:center; display: flex; justify-content: center; align-items: center">
+       返回
+      </div>
     </div>
 
     <div
