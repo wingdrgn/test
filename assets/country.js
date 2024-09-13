@@ -56,7 +56,8 @@ const select = document.getElementById('countryCode')
 try {
   nationalNumber.maxLength = 11
   // select.value = 'HK'
-  continueButton.disabled = false
+  continueButton.disabled = true
+  console.log('disable 60')
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
   // countryCode
@@ -78,9 +79,11 @@ try {
     ) {
       nationalNumberValid = true
       continueButton.disabled = false
+      console.log('disable 82')
     } else {
       nationalNumberValid = false
       continueButton.disabled = true
+      console.log('disable 86')
     }
     updateButtonState()
   }
@@ -88,9 +91,11 @@ try {
     if (nationalNumberValid) {
       continueButton.classList.add('button-active')
       continueButton.disabled = false
+      console.log('disable 94')
     } else {
       continueButton.classList.remove('button-active')
       continueButton.disabled = true
+      console.log('disable 98')
     }
   }
   if (nationalNumber) {
