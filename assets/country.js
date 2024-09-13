@@ -56,7 +56,7 @@ const select = document.getElementById('countryCode')
 try {
   nationalNumber.maxLength = 11
   // select.value = 'HK'
-  // continueButton.disabled = false
+  continueButton.disabled = false
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
   // countryCode
@@ -77,20 +77,20 @@ try {
       nationalNumber.value.trim().length >= 8
     ) {
       nationalNumberValid = true
-      // continueButton.disabled = false
+      continueButton.disabled = false
     } else {
       nationalNumberValid = false
-      // continueButton.disabled = true
+      continueButton.disabled = true
     }
     updateButtonState()
   }
   function updateButtonState() {
     if (nationalNumberValid) {
       continueButton.classList.add('button-active')
-      // continueButton.disabled = false
+      continueButton.disabled = false
     } else {
       continueButton.classList.remove('button-active')
-      // continueButton.disabled = true
+      continueButton.disabled = true
     }
   }
   if (nationalNumber) {
@@ -116,17 +116,17 @@ const phoneVerificationCode = document.getElementById('phoneVerificationCode')
 try {
   const itemError = document.getElementsByClassName('itemLevel')[0]
   itemError.classList.add('center')
-  // continueButton.disabled = true
+  continueButton.disabled = true
   phoneVerificationCode.maxLength = 6
   const otpDefaultPlaceholder = phoneVerificationCode.placeholder
   let phoneVerificationCodeValid = false
   function updateOtpButtonState() {
     if (phoneVerificationCodeValid) {
       continueButton.classList.add('button-active')
-      // continueButton.disabled = false
+      continueButton.disabled = false
     } else {
       continueButton.classList.remove('button-active')
-      // continueButton.disabled = true
+      continueButton.disabled = true
     }
   }
   if (phoneVerificationCode) {
