@@ -56,7 +56,7 @@ const select = document.getElementById('countryCode')
 try {
   nationalNumber.maxLength = 11
   // select.value = 'HK'
-  // continueButton.disabled = true
+  continueButton.disabled = false
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
   // countryCode
