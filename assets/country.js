@@ -52,6 +52,11 @@ const back = () => {
 const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')
 const select = document.getElementById('countryCode')
+const newOrder = [
+  { value: 'HK', text: '+852' },
+  { value: 'MO', text: '+853' },
+  { value: 'CN', text: '+86' }
+];
 
 try {
   nationalNumber.maxLength = 11
@@ -61,13 +66,14 @@ try {
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
   // countryCode
-  const list = ['HK', 'MO', 'CN']
+  // const list = ['HK', 'MO', 'CN']
   const options = document.querySelectorAll('#countryCode option')
   options.forEach((option, index) => {
-    if (!list.includes(option.value)) {
+    if (index > 2) {
       option.style.display = 'none'
     } else {
-      option.textContent = option.textContent?.match(/\+\d+/)[0]
+      option.value = newOrder[index].value
+      option.textContent = newOrder[index].text
     }
   })
   function validateInput() {
