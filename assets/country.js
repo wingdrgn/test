@@ -53,6 +53,7 @@ const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')
 const select = document.getElementById('countryCode')
 const newOrder = [
+  { value: '', text: 'Country' },
   { value: 'HK', text: '+852' },
   { value: 'MO', text: '+853' },
   { value: 'CN', text: '+86' }
@@ -69,7 +70,7 @@ try {
   // const list = ['HK', 'MO', 'CN']
   const options = document.querySelectorAll('#countryCode option')
   options.forEach((option, index) => {
-    if (index > 2) {
+    if (index > 3) {
       option.style.display = 'none'
     } else {
       option.value = newOrder[index].value
