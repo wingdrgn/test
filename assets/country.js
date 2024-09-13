@@ -51,6 +51,8 @@ const back = () => {
 //countrycode page
 const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')
+// double page's continue button
+continueButton.disabled = true
 const select = document.getElementById('countryCode')
 const newOrder = [
   { value: '', text: 'Country' },
@@ -61,8 +63,6 @@ const newOrder = [
 
 try {
   nationalNumber.maxLength = 11
-  // select.value = 'HK'
-  continueButton.disabled = true
   console.log('disable 60')
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
@@ -128,7 +128,6 @@ const phoneVerificationCode = document.getElementById('phoneVerificationCode')
 try {
   const itemError = document.getElementsByClassName('itemLevel')[0]
   itemError.classList.add('center')
-  continueButton.disabled = true
   phoneVerificationCode.maxLength = 6
   const otpDefaultPlaceholder = phoneVerificationCode.placeholder
   let phoneVerificationCodeValid = false
