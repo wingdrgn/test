@@ -66,8 +66,6 @@ try {
   console.log('disable 60')
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
-  // countryCode
-  // const list = ['HK', 'MO', 'CN']
   const options = document.querySelectorAll('#countryCode option')
   options.forEach((option, index) => {
     if (index > 3) {
@@ -163,12 +161,3 @@ try {
   console.log(error)
   console.log('isn`t otp page')
 }
-
-
-// text
-// if (locale === 'en') {
-//   document.querySelector('#nationalNumber').placeholder =
-//     'Please enter Your Mobile Number'
-// } else {
-//   document.querySelector('#nationalNumber').placeholder = '手機號碼'
-// }
