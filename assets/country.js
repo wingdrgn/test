@@ -1,6 +1,16 @@
 // header footer navigate
 const params = new URLSearchParams(window.location.search)
 const locale = params.get('ui_locales') || 'en'
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (locale === 'en') {
+    document.title = 'en title'
+  } else if (locale === 'zh-Hans') {
+    document.title = 'sc title'
+  } else {
+    document.title = 'tc title'
+  }
+})
 function navigate(type) {
   switch (type) {
     case 1:

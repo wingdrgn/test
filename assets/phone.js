@@ -1,5 +1,16 @@
+
 const params = new URLSearchParams(window.location.search)
 const locale = params.get('ui_locales')
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (locale === 'en') {
+    document.title = 'en title'
+  } else if (locale === 'zh-Hans') {
+    document.title = 'sc title'
+  } else {
+    document.title = 'tc title'
+  }
+})
 
 function navigate(type) {
   switch (type) {
@@ -73,15 +84,3 @@ phoneNumber.addEventListener('focus', () => {
 phoneNumber.addEventListener('blur', () => {
   phoneNumber.placeholder = defaultPlaceholder
 })
-
-// text
-// if (locale === 'en') {
-//   document.querySelector('.intro h2').textContent =
-//     'Welcome back to CTF Life ∙ CIRCLE! Please log in with your mobile number'
-//   document.querySelector('#phoneNumber').placeholder =
-//     'Please enter Your Mobile Number'
-// } else {
-//   document.querySelector('.intro h2').textContent =
-//     '歡迎回到「周大福人壽 • 生活圈」！請以手機號碼登入'
-//   document.querySelector('#phoneNumber').placeholder = '手機號碼'
-// }
