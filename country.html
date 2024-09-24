@@ -261,7 +261,8 @@ body {
 }
     </style>
     <script defer>
-      // header footer navigate
+      window.onload = function() {
+// header footer navigate
 const params = new URLSearchParams(window.location.search)
 const locale = params.get('ui_locales') || 'en'
 function navigate(type) {
@@ -424,6 +425,8 @@ try {
   console.log(error)
   console.log('isn`t otp page')
 }
+      }
+      
 
     </script>
 </head>

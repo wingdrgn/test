@@ -172,7 +172,8 @@
     }
   </style>
     <script defer>
-    const params = new URLSearchParams(window.location.search)
+      window.onload = function() {
+        const params = new URLSearchParams(window.location.search)
 const locale = params.get('ui_locales')
 
 function navigate(type) {
@@ -247,7 +248,7 @@ phoneNumber.addEventListener('focus', () => {
 phoneNumber.addEventListener('blur', () => {
   phoneNumber.placeholder = defaultPlaceholder
 })
-
+      }
   </script>
 </head>
 
