@@ -76,7 +76,7 @@ try {
   })
   if (nationalNumber.value.length === 8) {
     select.value = 'HK'
-  } else if (nationalNumber.value.length === 10 || nationalNumber.value.length === 11) {
+  } else if (nationalNumber.value.startsWith('1') && nationalNumber.value.length === 11) {
     select.value = 'CN'
   }
   function validateInput() {
