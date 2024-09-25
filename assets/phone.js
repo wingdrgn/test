@@ -1,3 +1,16 @@
+function reloadjs() {
+  const script = document.createElement('script')
+  script.src = 'https://fanciful-eclair-8d84f5.netlify.app/assets/phone.js?v=' + new Date().getTime()
+  script.defer = true
+  const oldScript = document.querySelectorAll('script')
+  oldScript.forEach((item) => item.remove())
+  document.head.appendChild(script)
+}
+
+window.addEventListener('pageshow', function() {
+  console.log('123')
+  reloadjs()
+})
 
 const params = new URLSearchParams(window.location.search)
 const locale = params.get('ui_locales')
