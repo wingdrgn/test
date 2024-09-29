@@ -90,7 +90,9 @@ try {
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
   const options = document.querySelectorAll('#countryCode option')
-  const errorelement = attrEntry.querySelector('.error .itemLevel')
+  const errorelement = attrEntry.querySelector('.error.itemLevel')
+  console.log(options, 'options')
+  console.log(errorelement, 'errorelement')
   if (errorelement) { console.log(errorelement, 'errorelement'); errorelement.classList.add('imprint') }
   const newPElement = document.createElement('div');
   newPElement.textContent = 'need phone number';
