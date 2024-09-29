@@ -14,6 +14,7 @@ window.addEventListener('pageshow', function () {
 // header footer navigate
 const params = new URLSearchParams(window.location.search)
 const locale = params.get('ui_locales') || 'en'
+localStorage.setItem('i18', locale)
 
 // document.addEventListener('DOMContentLoaded', function () {
 if (locale === 'en') {
