@@ -7,7 +7,7 @@ function reloadjs() {
   document.head.appendChild(script)
 }
 
-window.addEventListener('pageshow', function() {
+window.addEventListener('pageshow', function () {
   console.log('123')
   reloadjs()
 })
@@ -75,7 +75,6 @@ const back = () => {
 const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')
 const attrEntry = document.getElementsByClassName('attrEntry')[1]
-const errormessage = document.getElementsByClassName('itemLevel')[1]
 // double page's continue button
 continueButton.disabled = true
 const select = document.getElementById('countryCode')
@@ -92,7 +91,7 @@ try {
   let nationalNumberValid = false
   const options = document.querySelectorAll('#countryCode option')
   const errorelement = attrEntry.querySelector('.error .itemLevel')
-  if (errorelement) { errorelement.remove() }
+  if (errorelement) { console.log(errorelement, 'errorelement'); errorelement.classList.add('imprint') }
   const newPElement = document.createElement('div');
   newPElement.textContent = 'need phone number';
   newPElement.classList.add('selfError');
@@ -112,7 +111,7 @@ try {
   }
   function validateInput() {
     console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
-    if (nationalNumber.value.trim() < 8) {
+    if (nationalNumber.value.trim().length < 8) {
       newPElement.classList.remove('imprint')
     } else {
       newPElement.classList.add('imprint')
