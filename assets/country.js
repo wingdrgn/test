@@ -74,6 +74,8 @@ const back = () => {
 //countrycode page
 const nationalNumber = document.getElementById('nationalNumber')
 const continueButton = document.getElementById('continue')
+const attrEntry = document.getElementsByClassName('attrEntry')[1]
+const errormessage = document.getElementsByClassName('itemLevel')[1]
 // double page's continue button
 continueButton.disabled = true
 const select = document.getElementById('countryCode')
@@ -89,6 +91,12 @@ try {
   const defaultPlaceholder = nationalNumber.placeholder
   let nationalNumberValid = false
   const options = document.querySelectorAll('#countryCode option')
+  const errorelement = attrEntry.querySelector('.error .itemLevel')
+  if (errorelement) { errorelement.remove() }
+  const newPElement = document.createElement('div');
+  newPElement.textContent = 'need phone number';
+  newPElement.classList.add('selfError');
+  attrEntry.insertBefore(newPElement, attrEntry.querySelector('input'));
   options.forEach((option, index) => {
     if (index > 3) {
       option.style.display = 'none'
@@ -104,6 +112,11 @@ try {
   }
   function validateInput() {
     console.log(nationalNumber.value.trim(), 'nationalNumber.value.trim()')
+    if (nationalNumber.value.trim() < 8) {
+      newPElement.classList.remove('imprint')
+    } else {
+      newPElement.classList.add('imprint')
+    }
     if (
       // (select.value === 'ZH' && nationalNumber.value.trim().length === 11) ||
       // (select.value !== 'ZH' && nationalNumber.value.trim().length === 8)
