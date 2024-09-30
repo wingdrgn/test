@@ -101,7 +101,7 @@ try {
   attrEntry.insertBefore(newPElement, attrEntry.querySelector('input'));
   options.forEach((option, index) => {
     if (index > 3) {
-      option.disabled = true
+      option.remove()
     } else {
       option.value = newOrder[index].value
       option.textContent = newOrder[index].text
